@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,10 +14,9 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
+
 
 public class login extends AppCompatActivity {
 
@@ -48,7 +46,7 @@ public class login extends AppCompatActivity {
 
 
         ClickRegistrar();
-//el que hace el mayor trabajo
+        //el que hace el mayor trabajo
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +70,7 @@ public class login extends AppCompatActivity {
         @Override
         public void onComplete(@NonNull Task<AuthResult> task) {
             if(task.isSuccessful()){
-                startActivity(new Intent(login.this,guardarperfil.class));
+                startActivity(new Intent(login.this,Perfilusuario.class));
                 finish();
             }
             else{
@@ -84,6 +82,7 @@ public class login extends AppCompatActivity {
   }
 
 
+
     public void ClickRegistrar() {
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,21 +90,9 @@ public class login extends AppCompatActivity {
                 Intent intent = new Intent(login.this, registrar.class);
                 login.this.startActivity(intent);
 
+
             }
         });
     }
-
- /*
-    //lo siguiente es para recordar el usuario registrado una vez que salga de la app
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-            if(mAuth.getCurrentUser()!=null){
-                startActivity(new Intent(registrar.this,guardarperfil.class));
-                finish();
-            }
-
-    }*/
 
 }

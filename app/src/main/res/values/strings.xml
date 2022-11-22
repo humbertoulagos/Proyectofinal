@@ -7,12 +7,29 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
     <string name="title_activity_menu">Menu</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+                            <!--String nuevos-->
+    <string name="select">Seleccionar Pais</string>
+    <string name="Mipuntuaciontxt">Mi Puntuacion</string>
+    <string name="Correo">--</string>
+    <string name="Nombreusuario">--</string>
+    <string name="Menutxt">Menu</string>
+    <string name="uid">--</string>
+    
+    <string name="Jugarbtn">Jugar</string>
+    <string name="Puntuacionesbtn">Puntuaciones</string>
+    <string name="Acercadebtn">Acerca de</string>
+    <string name="btnCerrar_perfil">Cerrar sesion</string>
+    <string name="Alias">--</string>
+
+    <!-- Cronometro modo prueba capaz no funcione  el cronometro estaba en el numeros.class -->
+    <string name="chronometer1">Conometro</string>
+
+
 </resources>

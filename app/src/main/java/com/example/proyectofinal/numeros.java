@@ -52,6 +52,7 @@ public class numeros extends AppCompatActivity {
         listabotones.add((Button) findViewById(R.id.btn12));
 
 
+
         //area del codigo del tiempo
         crono=(Chronometer) findViewById(R.id.chronometer1);
         iniciar=(Button) findViewById(R.id.btniniciar); //contar=iniciar
@@ -61,9 +62,13 @@ public class numeros extends AppCompatActivity {
         iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 iniciar.setEnabled(false);
                 crono.setBase(SystemClock.elapsedRealtime());
+                crono.start();
 
+                //pendiente como enviar el valor del cronometro a la base de datos que está en perfilusuario para que se pueda
+                //reflejar a la entrada del perfil junto a los otros datos
 
             }
 
@@ -89,6 +94,7 @@ public class numeros extends AppCompatActivity {
 
             });
            //boton star una vez abierto el juego empieza el tiempo
+
 
         }
 
@@ -122,8 +128,8 @@ public class numeros extends AppCompatActivity {
 
 
 
-
-        if(cadena.equals(cadena2)) { //cadena(ordenada) equals(es igual) a cadena2 //si los dos array son iguales, el mensaje dirá que ganó/"OK"
+//cadena(ordenada) equals(es igual) a cadena2 //si los dos array son iguales, el mensaje dirá que ganó/"OK"
+        if(cadena.equals(cadena2)) {
            // Button btnValidar= (Button) findViewById(R.id.btnValidar);
 
             //final TextView texto2 = (TextView) findViewById(R.id.texto);
@@ -149,6 +155,8 @@ public class numeros extends AppCompatActivity {
         }
 
     }
+
+
 
 
 

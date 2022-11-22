@@ -7,16 +7,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+
 import android.widget.TextView;
-import com.google.firebase.auth.FirebaseAuth;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 public class guardarperfil extends AppCompatActivity {
@@ -27,6 +28,7 @@ public class guardarperfil extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private TextView mtxtnombre;
     private DatabaseReference mDatabase;
+ private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class guardarperfil extends AppCompatActivity {
         setContentView(R.layout.activity_guardarperfil);
 
         mAuth= FirebaseAuth.getInstance();
+       user=mAuth.getCurrentUser();
        BtnCerrar=(Button) findViewById(R.id.btnCerrar_perfil);
 
        mtxtnombre=(TextView)findViewById(R.id.textnombre);
@@ -51,7 +54,7 @@ public class guardarperfil extends AppCompatActivity {
         mostrarinfousuario();
 
     }
-
+//consulta a la base de datos sobre mostrar el usuario al momento de ingresar
     private void mostrarinfousuario(){
         String id=mAuth.getCurrentUser().getUid();
         mDatabase.child("Usuarios").child(id).addValueEventListener(new ValueEventListener() {
@@ -71,4 +74,7 @@ public class guardarperfil extends AppCompatActivity {
             }
         });
     }
+
+
+
 }
